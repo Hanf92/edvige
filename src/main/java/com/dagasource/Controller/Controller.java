@@ -14,6 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -21,13 +22,13 @@ import org.springframework.web.bind.annotation.*;
  */
 
 @RestController
-@EnableAutoConfiguration
 @SpringBootApplication
 public class Controller {
 
     private  BookRepository bookRepository;
     private  UserRepo userRepo;
 
+    @Autowired
     public Controller(BookRepository bookRepository, UserRepo userRepo) {
         this.bookRepository = bookRepository;
         this.userRepo = userRepo;

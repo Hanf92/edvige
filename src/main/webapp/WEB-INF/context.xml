@@ -5,4 +5,5 @@
 
     <bean name="bookRepository" class="com.dagasource.InsertBook.BookRepository" abstract="true"/>
     <bean name="userRepo" class="com.dagasource.InsertUser.UserRepo" abstract="true"/>
+
 </beans>

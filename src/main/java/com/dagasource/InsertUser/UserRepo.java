@@ -1,5 +1,6 @@
 package com.dagasource.InsertUser;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
