@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
  */
 
 @RestController
+@CrossOrigin
 @SpringBootApplication
 public class Controller {
 
