@@ -7,9 +7,11 @@ import com.google.gson.JsonParser;
 import com.google.gson.JsonObject;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,7 +27,6 @@ public class Controller {
 
     private  BookRepository bookRepository;
     private  UserRepo userRepo;
-
 
     public Controller(BookRepository bookRepository, UserRepo userRepo) {
         this.bookRepository = bookRepository;
