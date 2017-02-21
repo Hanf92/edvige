@@ -25,13 +25,11 @@ import org.springframework.web.bind.annotation.*;
 @SpringBootApplication
 public class Controller {
 
-    private  BookRepository bookRepository;
+    private BookRepository bookRepository;
     private  UserRepo userRepo;
 
-    @Autowired
-    public Controller(BookRepository bookRepository, UserRepo userRepo) {
-        this.bookRepository = bookRepository;
-        this.userRepo = userRepo;
+    public Controller() {
+
     }
 
 
