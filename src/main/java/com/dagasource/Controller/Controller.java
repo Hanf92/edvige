@@ -21,13 +21,12 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @EnableAutoConfiguration
 @SpringBootApplication
-@ComponentScan("com.dagasource")
 public class Controller {
 
     private  BookRepository bookRepository;
     private  UserRepo userRepo;
 
-    @Autowired
+
     public Controller(BookRepository bookRepository, UserRepo userRepo) {
         this.bookRepository = bookRepository;
         this.userRepo = userRepo;
