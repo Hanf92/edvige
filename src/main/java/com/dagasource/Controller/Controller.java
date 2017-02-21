@@ -60,6 +60,7 @@ public class Controller {
             return ResponseEntity.ok().body(saved);
 
         }catch (Exception e){
+            e.printStackTrace();
             System.out.println("ATTENZIONE: " + e.getMessage());
         }
         return null;
