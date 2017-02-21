@@ -73,8 +73,8 @@ public class Controller {
 
             String response = "{"+
                     '\"'+
-                    "messaggio:"+
-                    '\"'+
+                    "messaggio"+
+                    '\"'+":"+
                     "123}";
 
             return ResponseEntity.ok().body(response);
