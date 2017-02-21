@@ -1,0 +1,7 @@
+{
+  "name": "Edvige be application",
+  "description": "Edvige-be",
+  "repository": "https://github.com/Hanf92/edvige",
+  "image": "heroku/java",
+  "addons": [ "heroku-postgresql" ]
+}
