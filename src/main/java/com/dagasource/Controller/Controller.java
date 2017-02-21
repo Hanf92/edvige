@@ -27,12 +27,7 @@ import org.springframework.web.bind.annotation.*;
 public class Controller {
 
     private BookRepository bookRepository;
-    private  UserRepo userRepo;
-
-    public Controller() {
-
-    }
-
+    private UserRepo userRepo;
 
     @RequestMapping(value= "/addBook", method = RequestMethod.POST)
     public ResponseEntity<Book> addBook(@RequestParam("isbn") String isbn){
@@ -59,6 +54,8 @@ public class Controller {
             user.setCognome(cognome);
             String nome = jsonObject.get("nome").getAsString();
             user.setNome(nome);
+            System.out.println(cognome);
+            System.out.println(nome);
             Users saved = userRepo.save(user);
             return ResponseEntity.ok().body(saved);
 
