@@ -9,6 +9,7 @@ import com.google.gson.JsonObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,12 +19,13 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @EnableAutoConfiguration
+@SpringBootApplication
 public class Controller {
 
-    @Autowired
     private final BookRepository bookRepository;
     private final UserRepo userRepo;
 
+    @Autowired
     public Controller(BookRepository bookRepository, UserRepo userRepo) {
         this.bookRepository = bookRepository;
         this.userRepo = userRepo;
