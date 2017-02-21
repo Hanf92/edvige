@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @EnableAutoConfiguration
 @SpringBootApplication
+@ComponentScan("com.dagasource")
 public class Controller {
 
     private  BookRepository bookRepository;
@@ -31,8 +33,6 @@ public class Controller {
         this.userRepo = userRepo;
     }
 
-    public Controller() {
-    }
 
     @RequestMapping(value= "/addBook", method = RequestMethod.POST)
     public ResponseEntity<Book> addBook(@RequestParam("isbn") String isbn){
