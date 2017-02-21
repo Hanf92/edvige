@@ -6,7 +6,6 @@
 	<groupId>com.dagasource</groupId>
 	<artifactId>edvige-be</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<artifactId>Edvige-be</artifactId>
 
 	<name>edvige-be</name>
 	<description>Demo project for Spring Boot</description>
