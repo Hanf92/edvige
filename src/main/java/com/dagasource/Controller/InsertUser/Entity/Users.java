@@ -1,4 +1,4 @@
-package com.dagasource.InsertUser;
+package com.dagasource.Controller.InsertUser.Entity;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -13,6 +13,7 @@ import javax.validation.constraints.NotNull;
 @Data
 @RequiredArgsConstructor
 public class Users {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

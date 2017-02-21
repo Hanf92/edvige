@@ -1,21 +1,14 @@
-package com.dagasource.Controller;
+package com.dagasource.Controller.InsertUser;
 
-import com.dagasource.InsertBook.Book;
-import com.dagasource.InsertUser.*;
-import com.dagasource.InsertBook.BookRepository;
+import com.dagasource.Controller.InsertUser.Entity.*;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonObject;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -26,22 +19,8 @@ import org.springframework.web.bind.annotation.*;
 @SpringBootApplication
 public class Controller {
 
-    private BookRepository bookRepository;
+    @Autowired
     private UserRepo userRepo;
-
-    @RequestMapping(value= "/addBook", method = RequestMethod.POST)
-    public ResponseEntity<Book> addBook(@RequestParam("isbn") String isbn){
-        try {
-            Book book = new Book();
-            book.setIsbn(isbn);
-            Book saved = bookRepository.save(book);
-            System.out.println(isbn);
-            return ResponseEntity.ok().body(saved);
-        }catch (Exception e){
-            System.out.println("ATTENZIONE: " + e.getMessage());
-        }
-        return null;
-    }
 
     @RequestMapping(value= "/addUser", method = RequestMethod.POST)
     public ResponseEntity<Users> addUser(@RequestBody String request){
@@ -54,8 +33,6 @@ public class Controller {
             user.setCognome(cognome);
             String nome = jsonObject.get("nome").getAsString();
             user.setNome(nome);
-            System.out.println(cognome);
-            System.out.println(nome);
             Users saved = userRepo.save(user);
             return ResponseEntity.ok().body(saved);
 

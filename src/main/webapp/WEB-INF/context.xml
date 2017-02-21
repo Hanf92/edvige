@@ -3,7 +3,6 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean name="bookRepository" class="com.dagasource.InsertBook.BookRepository" abstract="true"/>
-    <bean name="userRepo" class="com.dagasource.InsertUser.UserRepo" abstract="true"/>
+        <bean name="userRepo" class="com.dagasource.Controller.InsertUser.Entity.UserRepo" abstract="true"/>
 
 </beans>
