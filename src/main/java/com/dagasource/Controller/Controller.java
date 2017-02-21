@@ -6,6 +6,7 @@ import com.dagasource.InsertBook.BookRepository;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonObject;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 @EnableAutoConfiguration
 public class Controller {
 
+    @Autowired
     private final BookRepository bookRepository;
     private final UserRepo userRepo;
 
