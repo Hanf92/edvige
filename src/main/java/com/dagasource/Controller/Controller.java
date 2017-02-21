@@ -22,13 +22,16 @@ import org.springframework.web.bind.annotation.*;
 @SpringBootApplication
 public class Controller {
 
-    private final BookRepository bookRepository;
-    private final UserRepo userRepo;
+    private  BookRepository bookRepository;
+    private  UserRepo userRepo;
 
     @Autowired
     public Controller(BookRepository bookRepository, UserRepo userRepo) {
         this.bookRepository = bookRepository;
         this.userRepo = userRepo;
+    }
+
+    public Controller() {
     }
 
     @RequestMapping(value= "/addBook", method = RequestMethod.POST)
