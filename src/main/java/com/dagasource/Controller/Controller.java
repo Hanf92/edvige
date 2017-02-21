@@ -71,7 +71,7 @@ public class Controller {
     public ResponseEntity<String> getDataHome(){
         try {
 
-            String response = "{"+'\"'+"messaggio:123"+'\"';
+            String response = "{"+'\"'+"messaggio:"+"123}"+'\"';
             return ResponseEntity.ok().body(response);
 
         }catch (Exception e){
