@@ -4,9 +4,12 @@ import com.dagasource.Controller.InsertUser.Entity.*;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonObject;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +22,7 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin
 @SpringBootApplication
 public class Controller {
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private UserRepo userRepo;
@@ -34,32 +38,21 @@ public class Controller {
             user.setCognome(cognome);
             String nome = jsonObject.get("nome").getAsString();
             user.setNome(nome);
+            String citta = jsonObject.get("citta").getAsString();
+            user.setCitta(citta);
+            String email = jsonObject.get("email").getAsString();
+            user.setEmail(email);
             Users saved = userRepo.save(user);
+            log.info("User saved");
             return ResponseEntity.ok().body(saved);
 
         }catch (Exception e){
             e.printStackTrace();
             System.out.println("ATTENZIONE: " + e.getMessage());
+            log.info(e.getMessage());
+            return new ResponseEntity<Users>(HttpStatus.BAD_REQUEST);
         }
-        return null;
-    }
 
-    @RequestMapping(value= "/getDataHome", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> getDataHome(){
-        try {
-
-            String response = "{"+
-                    '\"'+
-                    "messaggio"+
-                    '\"'+":"+
-                    "123}";
-
-            return ResponseEntity.ok().body(response);
-
-        }catch (Exception e){
-            System.out.println("ATTENZIONE: " + e.getMessage());
-        }
-        return null;
     }
 
     public static void main(String[] args) throws Exception {
